@@ -26,9 +26,13 @@ def current_week():
 
     month1 = start_date.strftime('%B')
     day1 = start_date.day
+    year1 = start_date.year
     month2 = end_date.strftime('%B')
     day2 = end_date.day
-    year = end_date.year
-    string = 'Week of {} {} - {} {}, {}'.format(month1, day1, month2, day2, year)
+    year2 = end_date.year
+    if year1 != year2:
+        string = 'Week of {} {}, {} - {} {}, {}'.format(month1, day1,year1, month2, day2, year2)
+    else:
+        string = 'Week of {} {} - {} {}, {}'.format(month1, day1, month2, day2, year1)
 
     return string
